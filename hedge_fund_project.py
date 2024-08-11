@@ -2,14 +2,6 @@ from datetime import datetime
 import yfinance as yf
 import matplotlib.pyplot as plt
 
-def get_apple_stock_data():
-    now = datetime.now()
-    start_of_month = now.replace(day=1)
-    apple_stock = yf.download('AAPL', start=start_of_month, end=now)
-    apple_stock.index = apple_stock.index.strftime('%Y-%m-%d')
-    stock_data = apple_stock.to_dict('index')
-    return stock_data
-
 def dividend():
     now = datetime.now()
     start_of_month = now.replace(day=1)
